@@ -1,6 +1,7 @@
-package mybatis.interceptor;
+package mybatis;
 
-import com.ut.scf.core.dict.PageInfoBean;
+
+import bean.PageInfoBean;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.executor.parameter.ParameterHandler;
 import org.apache.ibatis.executor.statement.RoutingStatementHandler;

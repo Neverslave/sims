@@ -61,7 +61,7 @@
 		<!-- 自动扫描mapping.xml文件 -->
 		<property name="mapperLocations" value="classpath*:/mybatis/mapping/**/*Mapper.xml"></property>
 		<property name="plugins">  
-	        <bean class="com.ut.scf.mybatis.interceptor.MybatisSpringPageInterceptor">  
+	        <bean class="com.ut.scf.mybatis.interceptor.MybatisSpringPageInterceptor">
 	        </bean>  
 	    </property> 
 	</bean>
