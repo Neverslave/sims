@@ -17,7 +17,7 @@
                         http://www.springframework.org/schema/task/spring-task-4.0.xsd">
 	
 	<!-- 自动扫描Service，使用注解 ，排除Controller，防止Service事务不成功-->
-	<context:component-scan base-package="com.ut.scf">
+	<context:component-scan base-package="com">
 	    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
@@ -50,7 +50,7 @@
                 <property name="logAbandoned" value="false"/>    
                 <property name="removeAbandoned" value="true"/>    
                 <property name="removeAbandonedTimeout" value="60"/>  
-                <property name="jdbcInterceptors" value="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"/>    
+                <property name="jdbcInterceptors" value="org.apache.tomcat.jdbc.pool.com.mybatis.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.com.mybatis.interceptor.StatementFinalizer"/>
             </bean>    
         </property>    
     </bean>
@@ -59,16 +59,16 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- 自动扫描mapping.xml文件 -->
-		<property name="mapperLocations" value="classpath*:/mybatis/mapping/**/*Mapper.xml"></property>
+		<property name="mapperLocations" value="classpath*:/com/mybatis/mapping/**/*Mapper.xml"></property>
 		<property name="plugins">  
-	        <bean class="com.ut.scf.mybatis.interceptor.MybatisSpringPageInterceptor">
+	        <bean class="com.mybatis.interceptor.MybatisSpringPageInterceptor">
 	        </bean>  
 	    </property> 
 	</bean>
 
 	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.ut.scf.dao" />
+		<property name="basePackage" value="com.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
 

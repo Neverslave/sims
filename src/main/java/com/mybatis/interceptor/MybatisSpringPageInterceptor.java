@@ -1,7 +1,7 @@
-package mybatis;
+package com.mybatis.interceptor;
 
 
-import bean.PageInfoBean;
+import com.bean.PageInfoBean;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.executor.parameter.ParameterHandler;
 import org.apache.ibatis.executor.statement.RoutingStatementHandler;

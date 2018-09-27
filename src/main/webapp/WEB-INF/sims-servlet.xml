@@ -38,11 +38,11 @@
             <mvc:exclude-mapping path="/wechat/**"/>
             <bean id="loginHandlerInterceptor" class="com.ut.scf.web.interceptor.LoginHandlerInterceptor"/>
         </mvc:interceptor>
-        <!--<mvc:interceptor>-->
+        <!--<mvc:com.mybatis.interceptor>-->
             <!--&lt;!&ndash; 拦截微信地址 &ndash;&gt;-->
             <!--<mvc:mapping path="/wechat/**"/>-->
-            <!--<bean id="wechatHandlerInterceptor" class="com.ut.scf.web.interceptor.WechatHandlerInterceptor"/>-->
-        <!--</mvc:interceptor>-->
+            <!--<bean id="wechatHandlerInterceptor" class="com.ut.scf.web.com.mybatis.interceptor.WechatHandlerInterceptor"/>-->
+        <!--</mvc:com.mybatis.interceptor>-->
     </mvc:interceptors>
     
     <!--Spring3.1开始的注解 HandlerAdapter -->

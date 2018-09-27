@@ -1,4 +1,4 @@
-package bean;
+package com.bean;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
