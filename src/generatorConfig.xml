@@ -9,5 +9,12 @@
   <sqlMapGenerator targetPackage="com.mybatis.mapping.auto" targetProject="scfyd" />
   <javaClientGenerator targetPackage="com.dao.auto" targetProject="scfyd" type="XMLMAPPER" />
   <table schema="SupplierManger" tableName="user"></table>
+  <table schema="SupplierManger" tableName="menu"></table>
+  <table schema="SupplierManger" tableName="menu_role"></table>
 </context>
 </generatorConfiguration>
+
+<!--
+java -jar mybatis-generator-core-1.3.6.jar -configfile generatorConfig.xml -overwrite
+
+-->

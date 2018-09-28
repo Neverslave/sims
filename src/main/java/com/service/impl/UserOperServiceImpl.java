@@ -3,6 +3,7 @@ package com.service.impl;
 import com.bean.BaseRespBean;
 import com.bean.User;
 import com.dao.IUserDao;
+import com.dao.auto.MenuMapper;
 import com.dao.auto.UserMapper;
 import com.dict.ErrorCodeEnum;
 import com.service.IUserOperService;
@@ -44,7 +45,7 @@ public class UserOperServiceImpl implements IUserOperService {
         BeanUtil.mapToBean(resultMap, user);
 
         // 根据角色Id，查询菜单列表
-        List<Map<String, Object>> list = menuDao.menuListByRoleId(respBean.getRoleId());
+        List<Map<String, Object>> list = MenuMapper.menuListByRoleId(respBean.getRoleId());
         respBean.setMenuList(ScfBizUtil.menuListToTree(list));
 
         // 根据用户id查询角色列表
